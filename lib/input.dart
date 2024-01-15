@@ -38,64 +38,60 @@ class _InputPageState extends State<InputPage> {
               child: Row(
                 children: <Widget>[
                   Expanded(
-                    child: GestureDetector(
-                      onTap: () {
+                    child: ReusableCard(
+                      onPress: () {
                         setState(() {
                           selectedGender = Gender.male;
                         });
                       },
-                      child: ReusableCard(
-                        colour: selectedGender == Gender.male ? activColorCard : inactiveColorCard,
-                        childCard: IconContent(
-                          icon: FontAwesomeIcons.mars,
-                          label: 'MALE',
-                        ),
+                      colour: selectedGender == Gender.male ? activColorCard : inactiveColorCard,
+                      childCard: IconContent(
+                        icon: FontAwesomeIcons.mars,
+                        label: 'MALE',
                       ),
                     ),
                   ),
                   Expanded(
-                    child: GestureDetector(
-                      onTap: () {
+                    child: ReusableCard(
+                      onPress: () {
                         setState(() {
                           selectedGender = Gender.female;
                         });
                       },
-                      child: ReusableCard(
-                        colour: selectedGender == Gender.female ? activColorCard : inactiveColorCard,
-                        childCard: IconContent(
-                          icon: FontAwesomeIcons.venus,
-                          label: 'FEMALE',
-                        ),
+                      colour: selectedGender == Gender.female ? activColorCard : inactiveColorCard,
+                      childCard: IconContent(
+                        icon: FontAwesomeIcons.venus,
+                        label: 'FEMALE',
                       ),
                     ),
                   ),
                 ],
               ),
             ),
-            Expanded(
-              child: ReusableCard(
-                colour: activColorCard,
-                childCard: Column(),
-              ),
-            ),
-            Expanded(
-              child: Row(
-                children: <Widget>[
-                  Expanded(
-                    child: ReusableCard(
-                      colour: activColorCard,
-                      childCard: Column(),
-                    ),
-                  ),
-                  Expanded(
-                    child: ReusableCard(
-                      colour: activColorCard,
-                      childCard: Column(),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            // Expanded(
+            //   child: ReusableCard(
+            //     colour: activColorCard,
+            //     childCard: Column(),
+            //   ),
+            // ),
+            // Expanded(
+            //   child: Row(
+            //     children: <Widget>[
+            //       Expanded(
+            //         child: ReusableCard(
+            //           colour: activColorCard,
+            //           childCard: Column(),
+            //         ),
+            //       ),
+            //       Expanded(
+            //         child: ReusableCard(
+            //           colour: activColorCard,
+            //           childCard: Column(),
+            //         ),
+            //       ),
+            //     ],
+            //   ),
+            // ),
             Container(
               color: bottomContainerColor,
               margin: EdgeInsets.only(top: 10.0),
